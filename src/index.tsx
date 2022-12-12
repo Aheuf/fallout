@@ -9,9 +9,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <Provider>
+  <React.StrictMode>
     <App />
-  </Provider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

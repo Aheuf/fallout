@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Origins from './components/Origins';
+import Origins from './components/origins/Origins'
 
 function App() {
   return (
