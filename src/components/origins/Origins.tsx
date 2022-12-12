@@ -1,6 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import React, { useContext } from 'react';
+import { PlayerContext } from '../../context/PlayerContext';
+import { PlayerContextType, IPlayer } from '../../@types/player';
 
-const Origins: FunctionComponent = () => {
+const Origins: React.FC = () => {
+  const { savePlayer } = useContext(PlayerContext) as PlayerContextType;
   const origins: string[] = [
     'initié de la confrérie',
     'goule',
@@ -10,9 +13,14 @@ const Origins: FunctionComponent = () => {
     'habitant de l\'abri'
   ];
 
-  function handleChange(event:React.FormEvent<HTMLSelectElement>){
+  const handleChange = (event:React.FormEvent<HTMLSelectElement>): void => {
+    let player:IPlayer = {
+      origin:''
+    }
+    let value = event.currentTarget.value;
     try {
-
+      player.origin = value;
+      savePlayer(player)
     } catch (error) {
       console.log(error)
     }
