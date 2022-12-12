@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { PlayerContextType } from '../../@types/player';
-import { PlayerContext } from '../../context/PlayerContext';
+import { PlayerContextType } from '../../../@types/player';
+import { PlayerContext } from '../../../context/PlayerContext';
 
 const SurvivorOption: React.FC  = () => {
   const {player, savePlayer } = useContext(PlayerContext) as PlayerContextType;

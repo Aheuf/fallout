@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { PlayerContext } from '../../context/PlayerContext';
 import { PlayerContextType, IPlayer } from '../../@types/player';
-import SurvivorOption from '../survivorOption/SurvivorOption';
+import SurvivorOption from './survivorOption/SurvivorOption';
+import MisterHandyOptions from './misterHandyOptions/MisterHandyOptions';
 
 const Origins: React.FC = () => {
   const {player, savePlayer } = useContext(PlayerContext) as PlayerContextType;
@@ -35,6 +36,7 @@ const Origins: React.FC = () => {
         })}
       </select>
       {player.origin == 'survivant' ? <SurvivorOption />: null}
+      {player.origin == 'mister handy' ? <MisterHandyOptions />:null}
     </div>
   )
 }
