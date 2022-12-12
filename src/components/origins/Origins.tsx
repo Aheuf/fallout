@@ -3,7 +3,7 @@ import { PlayerContext } from '../../context/PlayerContext';
 import { PlayerContextType, IPlayer } from '../../@types/player';
 
 const Origins: React.FC = () => {
-  const { savePlayer } = useContext(PlayerContext) as PlayerContextType;
+  const { player, savePlayer } = useContext(PlayerContext) as PlayerContextType;
   const origins: string[] = [
     'initié de la confrérie',
     'goule',
@@ -29,6 +29,7 @@ const Origins: React.FC = () => {
   return (
     <div>
       <h1>choisir une origine</h1>
+      <p>{player.origin}</p>
       <select name="select origines" id="origines" onChange={handleChange}>
         <option value="default">Choisir une origine</option>
         {origins.map((origine: string) => {

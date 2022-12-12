@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 import { PlayerContextType, IPlayer } from '../@types/player';
 
 export const PlayerContext = React.createContext<PlayerContextType | null>(null);
 
-const PlayerProvider: React.FC<React.ReactNode> = ({ children }) => {
+const PlayerProvider: React.FC<PropsWithChildren<IPlayer>> = ({ children }) => {
     const [player, setPlayer] = useState<IPlayer>({
         origin:'DisplayOrigin'
     })
