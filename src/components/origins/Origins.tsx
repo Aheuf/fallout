@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { useDispatch } from 'react-redux';
 
 const Origins: FunctionComponent = () => {
-  const dispatch = useDispatch()
   const origins: string[] = [
     'initié de la confrérie',
     'goule',
