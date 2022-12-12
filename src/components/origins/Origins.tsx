@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { PlayerContext } from '../../context/PlayerContext';
 import { PlayerContextType, IPlayer } from '../../@types/player';
+import SurvivorOption from '../survivorOption/SurvivorOption';
 
 const Origins: React.FC = () => {
-  const { savePlayer } = useContext(PlayerContext) as PlayerContextType;
+  const {player, savePlayer } = useContext(PlayerContext) as PlayerContextType;
   const origins: string[] = [
     'initié de la confrérie',
     'goule',
@@ -14,13 +15,11 @@ const Origins: React.FC = () => {
   ];
 
   const handleChange = (event:React.FormEvent<HTMLSelectElement>): void => {
-    let player:IPlayer = {
-      origin:''
-    }
+    let updatedPlayer:IPlayer = player;
     let value = event.currentTarget.value;
     try {
-      player.origin = value;
-      savePlayer(player)
+      updatedPlayer.origin = value;
+      savePlayer(updatedPlayer)
     } catch (error) {
       console.log(error)
     }
@@ -35,6 +34,7 @@ const Origins: React.FC = () => {
           return (<option key={origins.indexOf(origine)} value={origine}>{origine}</option>)
         })}
       </select>
+      {player.origin == 'survivant' ? <SurvivorOption />: null}
     </div>
   )
 }

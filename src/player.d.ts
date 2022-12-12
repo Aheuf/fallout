@@ -1,4 +1,5 @@
 interface IPlayer{
+  survivorOption: string
   origin:string
 }
 
