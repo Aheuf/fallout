@@ -51,5 +51,5 @@ const MisterHandyOptions = () => {
     </div>
   )
 }
-//FIXME: DISABLE ONLY UNCHECKED CASE IF COUNT === 0
+
 export default MisterHandyOptions
