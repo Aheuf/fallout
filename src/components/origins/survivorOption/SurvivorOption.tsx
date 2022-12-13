@@ -13,7 +13,7 @@ const SurvivorOption: React.FC  = () => {
   ]
 
   const handleChange = (event:React.FormEvent<HTMLSelectElement>): void => {
-    let updatedPlayer:IPlayer = player;
+    let updatedPlayer = player;
     let value = event.currentTarget.value;
     try {
       updatedPlayer.survivorOption = value;

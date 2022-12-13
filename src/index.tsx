@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <PlayerProvider origin={''} survivorOption={''}>
+    <PlayerProvider origin={''} survivorOption={''} misterHandyOptions={[]}>
       <App />
     </PlayerProvider>
   </React.StrictMode>

@@ -6,13 +6,15 @@ export const PlayerContext = React.createContext<PlayerContextType | null>(null)
 const PlayerProvider: React.FC<PropsWithChildren<IPlayer>> = ({ children }) => {
     const [player, setPlayer] = useState<IPlayer>({
         origin:'',
-        survivorOption:''
+        survivorOption:'',
+        misterHandyOptions:[]
     })
 
     const savePlayer = (updatedPlayer:IPlayer) => {
         const newPlayer: IPlayer = {
             origin: updatedPlayer.origin,
-            survivorOption: updatedPlayer.survivorOption
+            survivorOption: updatedPlayer.survivorOption,
+            misterHandyOptions: updatedPlayer.misterHandyOptions
         }
         setPlayer(newPlayer)
     }
