@@ -35,8 +35,8 @@ const Origins: React.FC = () => {
           return (<option key={origins.indexOf(origine)} value={origine}>{origine}</option>)
         })}
       </select>
-      {player.origin == 'survivant' ? <SurvivorOption />: null}
-      {player.origin == 'mister handy' ? <MisterHandyOptions />:null}
+      {player.origin === 'survivant' ? <SurvivorOption />: null}
+      {player.origin === 'mister handy' ? <MisterHandyOptions />:null}
     </div>
   )
 }
