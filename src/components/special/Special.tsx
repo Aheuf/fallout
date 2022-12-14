@@ -17,107 +17,93 @@ const Special: React.FC = () => {
 
     const handleChange = (event:React.FormEvent<HTMLInputElement>): void => {
         let updatedPlayer = player
-        event.preventDefault();
-        //FIXME: fix inputs behaviors when no more points, can spam and distribute more point than it can be distribute
+        let value: number = event.currentTarget.valueAsNumber
+
         switch(event.currentTarget.name){
             case 's':
-                if(updatedPlayer.special.s < event.currentTarget.valueAsNumber){
-                    if(points > 0){
-                        updatedPlayer.special.s = event.currentTarget.valueAsNumber;
-                        setPoints(points-1);
-                    } else {
-                        alert('pas assez de points !');
-                        event.currentTarget.valueAsNumber = player.special.s
-                    }
+                if(updatedPlayer.special.s < value && points > 0){
+                    updatedPlayer.special.s = value
+                    setPoints(points-1)
+                } else  if (updatedPlayer.special.s > value){
+                    updatedPlayer.special.s = value
+                    setPoints(points+1)
                 } else {
-                    updatedPlayer.special.s = event.currentTarget.valueAsNumber;
-                    setPoints(points+1);
+                    alert('pas assez de points')
+                    event.currentTarget.valueAsNumber -= 1;
                 }
                 break;
             case 'p':
-                if(updatedPlayer.special.p < event.currentTarget.valueAsNumber){
-                    if(points > 0){
-                        updatedPlayer.special.p = event.currentTarget.valueAsNumber;
-                        setPoints(points-1);
-                    } else {
-                        alert('pas assez de points !');
-                        event.currentTarget.valueAsNumber = player.special.p
-                    }
+                if(updatedPlayer.special.p < value && points > 0){
+                    updatedPlayer.special.p = value
+                    setPoints(points-1)
+                } else  if (updatedPlayer.special.p > value){
+                    updatedPlayer.special.p = value
+                    setPoints(points+1)
                 } else {
-                    updatedPlayer.special.p = event.currentTarget.valueAsNumber;
-                    setPoints(points+1);
+                    alert('pas assez de points')
+                    event.currentTarget.valueAsNumber -= 1;
                 }
                 break;
             case 'e':
-                if(updatedPlayer.special.e < event.currentTarget.valueAsNumber){
-                    if(points > 0){
-                        updatedPlayer.special.e = event.currentTarget.valueAsNumber;
-                        setPoints(points-1);
-                    } else {
-                        alert('pas assez de points !');
-                        event.currentTarget.valueAsNumber = player.special.e
-                    }
+                if(updatedPlayer.special.e < value && points > 0){
+                    updatedPlayer.special.e = value
+                    setPoints(points-1)
+                } else  if (updatedPlayer.special.e > value){
+                    updatedPlayer.special.e = value
+                    setPoints(points+1)
                 } else {
-                    updatedPlayer.special.e = event.currentTarget.valueAsNumber;
-                    setPoints(points+1);
+                    alert('pas assez de points')
+                    event.currentTarget.valueAsNumber -= 1;
                 }
                 break;
             case 'c':
-                if(updatedPlayer.special.c < event.currentTarget.valueAsNumber){
-                    if(points > 0){
-                        updatedPlayer.special.c = event.currentTarget.valueAsNumber;
-                        setPoints(points-1);
-                    } else {
-                        alert('pas assez de points !');
-                        event.currentTarget.valueAsNumber = player.special.c
-                    }
+                if(updatedPlayer.special.c < value && points > 0){
+                    updatedPlayer.special.c = value
+                    setPoints(points-1)
+                } else  if (updatedPlayer.special.c > value){
+                    updatedPlayer.special.c = value
+                    setPoints(points+1)
                 } else {
-                    updatedPlayer.special.c = event.currentTarget.valueAsNumber;
-                    setPoints(points+1);
+                    alert('pas assez de points')
+                    event.currentTarget.valueAsNumber -= 1;
                 }
                 break;
             case 'i':
-                if(updatedPlayer.special.i < event.currentTarget.valueAsNumber){
-                    if(points > 0){
-                        updatedPlayer.special.i = event.currentTarget.valueAsNumber;
-                        setPoints(points-1);
-                    } else {
-                        alert('pas assez de points !');
-                        event.currentTarget.valueAsNumber = player.special.i
-                    }
+                if(updatedPlayer.special.i < value && points > 0){
+                    updatedPlayer.special.i = value
+                    setPoints(points-1)
+                } else  if (updatedPlayer.special.i > value){
+                    updatedPlayer.special.i = value
+                    setPoints(points+1)
                 } else {
-                    updatedPlayer.special.i = event.currentTarget.valueAsNumber;
-                    setPoints(points+1);
+                    alert('pas assez de points')
+                    event.currentTarget.valueAsNumber -= 1;
                 }
                 break;
             case 'a':
-                if(updatedPlayer.special.a < event.currentTarget.valueAsNumber){
-                    if(points > 0){
-                        updatedPlayer.special.a = event.currentTarget.valueAsNumber;
-                        setPoints(points-1);
-                    } else {
-                        alert('pas assez de points !');
-                        event.currentTarget.valueAsNumber = player.special.a
-                    }
+                if(updatedPlayer.special.a < value && points > 0){
+                    updatedPlayer.special.a = value
+                    setPoints(points-1)
+                } else  if (updatedPlayer.special.a > value){
+                    updatedPlayer.special.a = value
+                    setPoints(points+1)
                 } else {
-                    updatedPlayer.special.a = event.currentTarget.valueAsNumber;
-                    setPoints(points+1);
+                    alert('pas assez de points')
+                    event.currentTarget.valueAsNumber -= 1;
                 }
                 break;
             case 'l':
-            if(updatedPlayer.special.l < event.currentTarget.valueAsNumber){
-                if(points > 0){
-                    updatedPlayer.special.l = event.currentTarget.valueAsNumber;
-                    setPoints(points-1);
+                if(updatedPlayer.special.l < value && points > 0){
+                    updatedPlayer.special.l = value
+                    setPoints(points-1)
+                } else  if (updatedPlayer.special.l > value){
+                    updatedPlayer.special.l = value
+                    setPoints(points+1)
                 } else {
-                    alert('pas assez de points !');
-                    event.currentTarget.valueAsNumber = player.special.l
+                    alert('pas assez de points')
+                    event.currentTarget.valueAsNumber -= 1;
                 }
-            } else {
-                updatedPlayer.special.l = event.currentTarget.valueAsNumber;
-                setPoints(points+1);
-            }
-            break;
+                break;
         }
         savePlayer(updatedPlayer)
     }
@@ -126,40 +112,37 @@ const Special: React.FC = () => {
     <div>
         <h1>S.P.E.C.I.A.L</h1>
         <p>il vous reste {points}pts à distribuer</p>
-        <table>
-            <tr>
-                <td>S.trength</td>
-                <td><input key={`s${player.special.s}`} type="number" name="s" defaultValue={player.special.s}
-                    max={player.origin === 'super mutant' ? "12": "10"} min={player.origin === 'super mutant' ? "6": "4"}
-                    onChange={handleChange}/></td>
-            </tr>
-            <tr>
-                <td>P.erception</td>
-                <td><input key={`p${player.special.p}`} type="number" name="p" defaultValue={player.special.p} max="10" min="4" onChange={handleChange}/></td>
-            </tr>
-            <tr>
-                <td>E.ndurance</td>
-                <td><input key={`e${player.special.e}`} type="number" name="e" defaultValue={player.special.e}
-                    max={player.origin === 'super mutant' ? "12": "10"} min={player.origin === 'super mutant' ? "6": "4"}
-                    onChange={handleChange}/></td>
-            </tr>
-            <tr>
-                <td>C.harism</td>
-                <td><input key={`c${player.special.c}`} type="number" name="c" defaultValue={player.special.c} max="10" min="4" onChange={handleChange}/></td>
-            </tr>
-            <tr>
-                <td>I.ntelligence</td>
-                <td><input key={`i${player.special.i}`} type="number" name="i" defaultValue={player.special.i} max="10" min="4" onChange={handleChange}/></td>
-            </tr>
-            <tr>
-                <td>A.thletism</td>
-                <td><input key={`a${player.special.a}`} type="number" name="a" defaultValue={player.special.a} max="10" min="4" onChange={handleChange}/></td>
-            </tr>
-            <tr>
-                <td>L.uck</td>
-                <td><input key={`l${player.special.l}`} type="number" name="l" defaultValue={player.special.l} max="10" min="4" onChange={handleChange}/></td>
-            </tr>
-        </table>
+        <form action="#">
+            <label htmlFor="s">S.trength</label>
+            <input key={`s${player.special.s}`} type="number" name="s" defaultValue={player.special.s}
+            max={player.origin === 'super mutant' ? "12": "10"} min={player.origin === 'super mutant' ? "6": "4"}
+            onChange={handleChange}/><br/>
+
+            <label htmlFor="p">P.erception</label>
+            <input key={`p${player.special.p}`} type="number" name="p" defaultValue={player.special.p} max="10" min="4"
+            onChange={handleChange}/><br/>
+
+            <label htmlFor="e">E.ndurance</label>
+            <input key={`e${player.special.e}`} type="number" name="e" defaultValue={player.special.e}
+            max={player.origin === 'super mutant' ? "12": "10"} min={player.origin === 'super mutant' ? "6": "4"}
+            onChange={handleChange}/><br/>
+
+            <label htmlFor="c">C.harism</label>
+            <input key={`c${player.special.c}`} type="number" name="c" defaultValue={player.special.c} max="10" min="4"
+            onChange={handleChange}/><br/>
+
+            <label htmlFor="i">I.ntelligence</label>
+            <input key={`i${player.special.i}`} type="number" name="i" defaultValue={player.special.i} max="10" min="4"
+            onChange={handleChange}/><br/>
+
+            <label htmlFor="a">A.thletism</label>
+            <input key={`a${player.special.a}`} type="number" name="a" defaultValue={player.special.a} max="10" min="4"
+            onChange={handleChange}/><br/>
+
+            <label htmlFor="l">L.uck</label>
+            <input key={`l${player.special.l}`} type="number" name="l" defaultValue={player.special.l} max="10" min="4"
+            onChange={handleChange}/><br/>
+        </form>
     </div>
     );
 }
