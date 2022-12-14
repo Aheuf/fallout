@@ -7,13 +7,14 @@ const Special: React.FC = () => {
     const [ points, setPoints ] = useState(5);
 
     useEffect(() => {
+        player.survivorOption === 'doué' ? setPoints(points+2): null;
         let updatedPlayer = player
         if(player.origin === 'super mutant'){
             updatedPlayer.special.s = updatedPlayer.special.s+2;
             updatedPlayer.special.e = updatedPlayer.special.e+2;
             savePlayer(updatedPlayer);
         }
-    },[player.origin]);
+    },[player.origin, player.survivorOption]);
 
     const handleChange = (event:React.FormEvent<HTMLInputElement>): void => {
         let updatedPlayer = player
