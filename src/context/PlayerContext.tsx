@@ -16,7 +16,8 @@ const PlayerProvider: React.FC<PropsWithChildren<IPlayer>> = ({ children }) => {
             i:5,
             a:5,
             l:5
-        }
+        },
+        atouts:[]
     })
 
     const savePlayer = (updatedPlayer:IPlayer) => {
@@ -24,7 +25,8 @@ const PlayerProvider: React.FC<PropsWithChildren<IPlayer>> = ({ children }) => {
             origin: updatedPlayer.origin,
             survivorOption: updatedPlayer.survivorOption,
             misterHandyOptions: updatedPlayer.misterHandyOptions,
-            special: updatedPlayer.special
+            special: updatedPlayer.special,
+            atouts: updatedPlayer.atouts
         }
         setPlayer(newPlayer)
     }
