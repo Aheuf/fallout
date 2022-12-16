@@ -19,7 +19,7 @@ root.render(
       i: 0,
       a: 0,
       l: 0
-    }}>
+    }} atouts={[]}>
       <App />
     </PlayerProvider>
   </React.StrictMode>

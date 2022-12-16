@@ -11,7 +11,8 @@ export interface IPlayer {
         i:number,
         a:number,
         l:number
-    }
+    };
+    atouts:{name:string,value:number,checked:boolean}[];
 }
 
 export type PlayerContextType = {
