@@ -17,7 +17,25 @@ const PlayerProvider: React.FC<PropsWithChildren<IPlayer>> = ({ children }) => {
             a:5,
             l:5
         },
-        atouts:[]
+        atouts:[
+            {name:'arme à énergie', value:0, checked:false},
+            {name:'arme de corps à corps', value:0, checked:false},
+            {name:'arme légère', value:0, checked:false},
+            {name:'armes lourdes', value:0, checked:false},
+            {name:'athlétisme', value:0, checked:false},
+            {name:'crochetage', value:0, checked:false},
+            {name:'discours', value:0, checked:false},
+            {name:'discrétion', value:0, checked:false},
+            {name:'explosifs', value:0, checked:false},
+            {name:'mains nues', value:0, checked:false},
+            {name:'médecine', value:0, checked:false},
+            {name:'pilotage', value:0, checked:false},
+            {name:'projectiles', value:0, checked:false},
+            {name:'réparation', value:0, checked:false},
+            {name:'science', value:0, checked:false},
+            {name:'survie', value:0, checked:false},
+            {name:'troc', value:0, checked:false}
+        ]
     })
 
     const savePlayer = (updatedPlayer:IPlayer) => {

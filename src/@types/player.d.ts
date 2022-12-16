@@ -12,7 +12,7 @@ export interface IPlayer {
         a:number,
         l:number
     };
-    atouts:string[];
+    atouts:{name:string,value:number,checked:boolean}[];
 }
 
 export type PlayerContextType = {
