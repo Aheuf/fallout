@@ -1,6 +1,7 @@
 
 export interface IPlayer {
     origin:string;
+    postHuman:boolean;
     survivorOption:string;
     misterHandyOptions:string[];
     special:{

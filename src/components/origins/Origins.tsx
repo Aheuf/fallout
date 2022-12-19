@@ -3,6 +3,7 @@ import { PlayerContext } from '../../context/PlayerContext';
 import { PlayerContextType, IPlayer } from '../../@types/player';
 import SurvivorOption from './survivorOption/SurvivorOption';
 import MisterHandyOptions from './misterHandyOptions/MisterHandyOptions';
+import BrotherHoodOptions from './brotherhood/BrotherhoodOptions';
 
 const Origins: React.FC = () => {
   const {player, savePlayer } = useContext(PlayerContext) as PlayerContextType;
@@ -20,10 +21,21 @@ const Origins: React.FC = () => {
     let value = event.currentTarget.value;
     try {
       updatedPlayer.origin = value;
+      if(value === 'goule'){
+        updatedPlayer.atouts.map(atout => {
+          atout.name === 'survie' ? atout.value = 2 : atout.value = 0;
+        })
+      }
       savePlayer(updatedPlayer)
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const handleCheck = (): void => {
+    let updatedPlayer = player;
+    updatedPlayer.postHuman = !updatedPlayer.postHuman
+    savePlayer(updatedPlayer)
   }
 
   return (
@@ -35,8 +47,13 @@ const Origins: React.FC = () => {
           return (<option key={origins.indexOf(origine)} value={origine}>{origine}</option>)
         })}
       </select>
+      <div hidden={player.origin === 'habitant de l\'abri' ? false : true}>
+        <input type="checkbox" name="postHuman" id="postHuman" onChange={handleCheck}/>
+        <label htmlFor="postHuman">post humain</label>
+      </div>
       {player.origin === 'survivant' ? <SurvivorOption />: null}
       {player.origin === 'mister handy' ? <MisterHandyOptions />:null}
+      {player.origin === 'initié de la confrérie' ? <BrotherHoodOptions/>:null}
     </div>
   )
 }
