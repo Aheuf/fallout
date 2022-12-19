@@ -25,6 +25,10 @@ const Origins: React.FC = () => {
         updatedPlayer.atouts.map(atout => {
           atout.name === 'survie' ? atout.value = 2 : atout.value = 0;
         })
+      } else {
+        updatedPlayer.atouts.map(atout => {
+          atout.value = 0;
+        })
       }
       savePlayer(updatedPlayer)
     } catch (error) {
@@ -35,6 +39,15 @@ const Origins: React.FC = () => {
   const handleCheck = (): void => {
     let updatedPlayer = player;
     updatedPlayer.postHuman = !updatedPlayer.postHuman
+    if(updatedPlayer.postHuman){
+      updatedPlayer.atouts.map(atout => {
+        atout.name === 'survie' ? atout.value = 2 : atout.value = 0;
+      })
+    } else {
+      updatedPlayer.atouts.map(atout => {
+        atout.value = 0;
+      })
+    }
     savePlayer(updatedPlayer)
   }
 
