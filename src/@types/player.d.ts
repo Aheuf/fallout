@@ -12,6 +12,7 @@ export interface IPlayer {
         a:number,
         l:number
     }
+    aptitude:string;
 }
 
 export type PlayerContextType = {
