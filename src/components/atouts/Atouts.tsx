@@ -1,13 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { PlayerContextType } from '../../@types/player';
 import { PlayerContext } from '../../context/PlayerContext';
 
 const Atouts: React.FC = () => {
     const { player, savePlayer } = useContext(PlayerContext) as PlayerContextType;
-    const [count, setCount] = useState(
-        player.survivorOption === 'éducation' || player.origin === 'habitant de l\'abri' ? 4 : 3
-    );
+    const [count, setCount] = useState(3);
     const [points,setPoints] = useState(player.special.i + 9);
+
+    useEffect(() => {
+        (player.origin === 'survivant' && player.survivorOption === 'éducation') || (player.origin === 'habitant de l\'abri' && !player.postHuman) ? setCount(4) : setCount(3);
+    },[player.survivorOption, player.origin, player.postHuman])
 
     const handleCheck = (event:React.FormEvent<HTMLInputElement>):void => {
         let updatedPlayer = player;
@@ -62,7 +64,7 @@ const Atouts: React.FC = () => {
                     onChange={handleCheck}/>
                     <label htmlFor={atout.name}>{atout.name}</label>
                     <input key={`${atout.name}${atout.value}`} type="number" name={`${atout.name}Points`} defaultValue={atout.value} min="0"
-                    max={player.origin === 'super mutant' ? "4":"6"} onChange={handleChange}/>
+                    max="3" onChange={handleChange}/>
                 </div>
                 )
             })}
