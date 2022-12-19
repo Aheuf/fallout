@@ -4,7 +4,9 @@ import { PlayerContext } from '../../context/PlayerContext';
 
 const Atouts: React.FC = () => {
     const { player, savePlayer } = useContext(PlayerContext) as PlayerContextType;
-    const [count, setCount] = useState(3);
+    const [count, setCount] = useState(
+        player.survivorOption === 'éducation' || player.origin === 'habitant de l\'abri' ? 4 : 3
+    );
     const [points,setPoints] = useState(player.special.i + 9);
 
     const handleCheck = (event:React.FormEvent<HTMLInputElement>):void => {
@@ -59,8 +61,8 @@ const Atouts: React.FC = () => {
                     <input name={atout.name} type="checkbox" value={atout.name} disabled={count === 0 && !atout.checked}
                     onChange={handleCheck}/>
                     <label htmlFor={atout.name}>{atout.name}</label>
-                    <input key={`${atout.name}${atout.value}`} type="number" name={`${atout.name}Points`} defaultValue={atout.value} min="0" max="6"
-                    onChange={handleChange}/>
+                    <input key={`${atout.name}${atout.value}`} type="number" name={`${atout.name}Points`} defaultValue={atout.value} min="0"
+                    max={player.origin === 'super mutant' ? "4":"6"} onChange={handleChange}/>
                 </div>
                 )
             })}

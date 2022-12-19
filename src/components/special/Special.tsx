@@ -129,11 +129,11 @@ const Special: React.FC = () => {
             onChange={handleChange}/><br/>
 
             <label htmlFor="c">C.harism</label>
-            <input key={`c${player.special.c}`} type="number" name="c" defaultValue={player.special.c} max="10" min="4"
+            <input key={`c${player.special.c}`} type="number" name="c" defaultValue={player.special.c} max={player.origin === 'super mutant' ? "6":"10"} min="4"
             onChange={handleChange}/><br/>
 
             <label htmlFor="i">I.ntelligence</label>
-            <input key={`i${player.special.i}`} type="number" name="i" defaultValue={player.special.i} max="10" min="4"
+            <input key={`i${player.special.i}`} type="number" name="i" defaultValue={player.special.i} max={player.origin === 'super mutant' ? "6":"10"} min="4"
             onChange={handleChange}/><br/>
 
             <label htmlFor="a">A.thletism</label>
