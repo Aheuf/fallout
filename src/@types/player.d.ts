@@ -1,4 +1,3 @@
-
 export interface IPlayer {
     origin:string;
     postHuman:boolean;
@@ -14,7 +13,8 @@ export interface IPlayer {
         l:number
     };
     atouts:{name:string,value:number,checked:boolean}[];
-    defence:{balistique:number,energetique:number,radiation:number,poison:number}
+    defence:{balistique:number,energetique:number,radiation:number,poison:number};
+    inventory:string[]
 }
 
 export type PlayerContextType = {

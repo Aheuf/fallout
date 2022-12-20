@@ -24,7 +24,7 @@ root.render(
       energetique: 0,
       radiation: 0,
       poison: 0
-    }}>
+    }} inventory={[]}>
       <App />
     </PlayerProvider>
   </React.StrictMode>
