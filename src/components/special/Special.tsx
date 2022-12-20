@@ -5,9 +5,9 @@ import { PlayerContext } from '../../context/PlayerContext';
 const Special: React.FC = () => {
     const { player, savePlayer } = useContext(PlayerContext) as PlayerContextType;
     const [ points, setPoints ] = useState(5);
-    //TODO: change luck stat to l-1 if origin is gifted survivor
+    
     useEffect(() => {
-        player.survivorOption === 'doué' ? setPoints(points+2): null;
+        player.survivorOption === 'doué' && player.origin === 'survivant'? setPoints(7): setPoints(5);
         let updatedPlayer = player
         if(player.origin === 'super mutant'){
             updatedPlayer.special.s = updatedPlayer.special.s+2;
