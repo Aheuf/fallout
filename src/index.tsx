@@ -19,7 +19,12 @@ root.render(
       i: 0,
       a: 0,
       l: 0
-    }} atouts={[]} postHuman={false}>
+    }} atouts={[]} postHuman={false} defence={{
+      balistique: 0,
+      energetique: 0,
+      radiation: 0,
+      poison: 0
+    }}>
       <App />
     </PlayerProvider>
   </React.StrictMode>

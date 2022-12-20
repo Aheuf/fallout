@@ -14,6 +14,7 @@ export interface IPlayer {
         l:number
     };
     atouts:{name:string,value:number,checked:boolean}[];
+    defence:{balistique:number,energetique:number,radiation:number,poison:number}
 }
 
 export type PlayerContextType = {

@@ -36,7 +36,8 @@ const PlayerProvider: React.FC<PropsWithChildren<IPlayer>> = ({ children }) => {
             {name:'science', value:0, checked:false},
             {name:'survie', value:0, checked:false},
             {name:'troc', value:0, checked:false}
-        ]
+        ],
+        defence:{balistique:0,energetique:0,radiation:0,poison:0}
     })
 
     const savePlayer = (updatedPlayer:IPlayer) => {
@@ -46,7 +47,8 @@ const PlayerProvider: React.FC<PropsWithChildren<IPlayer>> = ({ children }) => {
             survivorOption: updatedPlayer.survivorOption,
             misterHandyOptions: updatedPlayer.misterHandyOptions,
             special: updatedPlayer.special,
-            atouts: updatedPlayer.atouts
+            atouts: updatedPlayer.atouts,
+            defence: updatedPlayer.defence
         }
         setPlayer(newPlayer)
     }
