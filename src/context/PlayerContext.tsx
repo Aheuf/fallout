@@ -38,7 +38,7 @@ const PlayerProvider: React.FC<PropsWithChildren<IPlayer>> = ({ children }) => {
             {name:'troc', value:0, checked:false}
         ],
         defence:{balistique:0,energetique:0,radiation:0,poison:0},
-        inventory:[]
+        inventory:{pack:[],other:[]}
     })
 
     const savePlayer = (updatedPlayer:IPlayer) => {

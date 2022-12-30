@@ -82,15 +82,6 @@ const PackProvider: React.FC<PropsWithChildren<IPack>> = ({ children }) => {
         ],
     },
     {
-        type: 'super mutant',
-        name: 'frappeur',
-        inventory: [
-          'plastron un bras de pillard',
-          'fusil de fortune lourd avec 6+3d6 cartouches .38',
-          '5 capsules',
-        ],
-    },
-    {
         type: 'habitant de l\'abri',
         name: 'agent de sécurité de vault-tec',
         inventory: [
@@ -115,6 +106,52 @@ const PackProvider: React.FC<PropsWithChildren<IPack>> = ({ children }) => {
           '2 stimpack',
           '10 capsules'
         ],
+    },
+    {
+      type: 'habitant des terres désolés',
+      name: 'colon',
+      inventory: [
+        'Vêtement résistants',
+        'pistolet de fortune avec 6+3d6 cartouches .38',
+        '45 capsules'
+      ],
+    },
+    {
+      type: 'habitant des terres désolés',
+      name: 'marchand',
+      inventory: [
+        'Vêtement résistants',
+        'pistolet de fortune avec 8+4d6 cartouches .38',
+        'deux brahmines',
+        '50 capsules'
+      ],
+    },
+    {
+      type: 'habitant des terres désolés',
+      name: 'mercenaire',
+      inventory: [
+        'Vêtement résistants',
+        'prospectus mentionnant une mission dans nue colonie à proximité, payé 50 capsules',
+        '15 capsules'
+      ],
+    },
+    {
+      type: 'habitant des terres désolés',
+      name: 'pillard',
+      inventory: [
+        'harnais',
+        'pistolet de fortune avec 10+5d6 cartouches .38',
+        '15 capsules'
+      ],
+    },
+    {
+      type: 'habitant des terres désolés',
+      name: 'vagabond',
+      inventory: [
+        'tenue de nomade',
+        'pistolet de fortune avec 8+4d6 cartouches .38',
+        '30 capsules'
+      ],
     },
   ]);
 

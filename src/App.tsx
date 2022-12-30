@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import Origins from './components/origins/Origins';
 import Special from './components/special/Special';
 import Atouts from './components/atouts/Atouts';
 import Statistics from './components/stats/Statistics';
 import Inventory from './components/inventory/Inventory';
+import { PlayerContext } from './context/PlayerContext';
+import { PlayerContextType } from './@types/player';
 
 function App() {
+  const { player, savePlayer } = useContext(PlayerContext) as PlayerContextType;
+
   return (
     <div className="App">
       <Origins/>

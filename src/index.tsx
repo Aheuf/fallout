@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import PlayerProvider from './context/PlayerContext';
+import PackProvider from './context/PackContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,22 +12,24 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <PlayerProvider origin={''} survivorOption={''} misterHandyOptions={[]} special={{
-      s: 0,
-      p: 0,
-      e: 0,
-      c: 0,
-      i: 0,
-      a: 0,
-      l: 0
-    }} atouts={[]} postHuman={false} defence={{
-      balistique: 0,
-      energetique: 0,
-      radiation: 0,
-      poison: 0
-    }} inventory={[]}>
-      <App />
-    </PlayerProvider>
+    <PackProvider type={''} name={''} inventory={[]}>
+      <PlayerProvider origin={''} survivorOption={''} misterHandyOptions={[]} special={{
+        s: 0,
+        p: 0,
+        e: 0,
+        c: 0,
+        i: 0,
+        a: 0,
+        l: 0
+      }} atouts={[]} postHuman={false} defence={{
+        balistique: 0,
+        energetique: 0,
+        radiation: 0,
+        poison: 0
+      }} inventory={{pack:[],other:[]}}>
+        <App />
+      </PlayerProvider>
+    </PackProvider>
   </React.StrictMode>
 );
 

@@ -14,7 +14,7 @@ export interface IPlayer {
     };
     atouts:{name:string,value:number,checked:boolean}[];
     defence:{balistique:number,energetique:number,radiation:number,poison:number};
-    inventory:string[]
+    inventory:{pack:string[],other:[]}
 }
 
 export type PlayerContextType = {
