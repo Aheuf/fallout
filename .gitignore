@@ -11,6 +11,8 @@
 # production
 /build
 
+/SCANNED_RULES
+
 # misc
 .DS_Store
 .env.local
